@@ -1,11 +1,4 @@
-<?php
-include 'connection.php';
 
-
-
-
-
-?>
 
 
 <!DOCTYPE html>

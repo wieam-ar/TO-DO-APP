@@ -1,29 +1,3 @@
-<?php
-include 'connection.php';
-session_start();
-if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username'], $_POST['password'])){
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-
-    $sql2="SELECT * FROM users WHERE username=:username && password =:password";
-    $stmt2=$pdo->prepare($sql2);
-    $stmt2->execute([':username' => $username , ':password' =>$password ]);
-
-    if ($stmt2->rowCount() > 0) {
-        $message = "Ce compte existe déjà. Veuillez vous connecter.";
-    } else {
-        $sql = "INSERT INTO users(username, password) VALUES (:username, :password)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([':username' => $username, ':password' => $password]);
-        header("Location: dashboard.php");
-        exit;
-    }
-   
-}
-
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">

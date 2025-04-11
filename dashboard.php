@@ -1,8 +1,3 @@
-<?php
-include 'connection.php';
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +43,7 @@ include 'connection.php';
             
           <div class="glob">
         
-            <h2>Hello, Beautiful !</h2>
+            <h2>Hello, !</h2>
             <p class="text-muted">What do you want to do today?</p>
           </div>
           <div class="image">
@@ -61,7 +56,7 @@ include 'connection.php';
         <div class="d-flex justify-content-between align-items-center mb-2">
           <h5>Today's Tasks</h5>
           <div>
-            <small class="text-danger me-3">Delete All</small>
+            <small class="text-danger me-3"><a href="?delete_all">Delete All</a></small>
             <small class="text-muted">Monday, 18 December 2023</small>
           </div>
         </div>

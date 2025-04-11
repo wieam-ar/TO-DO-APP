@@ -1,21 +1,3 @@
-<?php
-include 'connection.php';
-if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['title'] , $_POST['description'],$_POST['save'])){
-    $description=$_POST['description'];
-    $title=$_POST['title'];
-    $save=$_POST['save'];
-
-if(isset($_POST['save'])){
-
-    $sql3="INSERT INTO task (title,description) VALUES(:title,:description)";
-    $stmt3=$pdo->prepare($sql3);
-    $stmt3->execute(["title" => $title , "description"=>$description]);
-    header("Location : task.php");
-
-}
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +20,7 @@ if(isset($_POST['save'])){
       <!-- Sidebar -->
       <div class="col-md-2 sidebar">
         <h4  style="color:#BA5112;">To-Do App</h4>
-        <button class="btnTsak w-100 mt-5" data-bs-toggle="modal" data-bs-target="#task">
+        <button class="btnTsak w-100 mt-5" data-bs-toggle="modal" data-bs-target="#task" name="add_task">
         Add Task <span class="ms-1">➕</span>
         </button>
 
@@ -75,7 +57,7 @@ if(isset($_POST['save'])){
             </div>
         <!-- Tasks Section -->
         <div class="d-flex justify-content-between align-items-center mb-2">
-          <h5 class="mt-3">Today's Completed Tasks</h5>
+          <h5 class="mt-3">Today's  Tasks</h5>
           <div>
             <small class="text-muted">Monday, 18 December 2023</small>
           </div>
@@ -88,7 +70,7 @@ if(isset($_POST['save'])){
                 <form action="" method="post">
                     <div class="task-card d-flex align-items-center">
                     <input class="form-check-input me-2" type="checkbox" name="task2" id="tasks">
-                    <label for="task2"><?= htmlspecialchars($title) ?></label>
+                  
                     
                 </div>
                 <div class="task-card d-flex align-items-center">
