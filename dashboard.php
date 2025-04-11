@@ -40,14 +40,15 @@ include 'connection.php';
             <div class="dashbord d-flex justify-content-between ">
                 <h2>Dashboard</h2>
                 <div class="text-end">
-                    <button class="btn">Sign out ➔</button>
+                <a href="signup.php" class="btn button ">Sign out ➔</a>
                 </div>
             </div>
 
         <div class="d-flex justify-content-between align-items-center mb-4 p-3">
             
           <div class="glob">
-            <h2>Hello, Beautiful <?= $username ?>!</h2>
+        
+            <h2>Hello, Beautiful !</h2>
             <p class="text-muted">What do you want to do today?</p>
           </div>
           <div class="image">
